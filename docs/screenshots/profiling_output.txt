@@ -1,0 +1,100 @@
+=== BASIC INFO ===
+Dataset 1 shape: (5000, 14)
+Dataset 2 shape: (5000, 15)
+
+Dataset 1 columns:
+ ['Accident_ID', 'Location', 'Date', 'Severity', 'Weather', 'Vehicle_Type', 'Injuries', 'Fatalities', 'Cause', 'Road_Type', 'Vehicle_Speed', 'Alcohol_Involved', 'Road_Condition', 'Time']
+
+Dataset 2 columns:
+ ['Accident_ID', 'Accident_Description', 'Police_Station', 'Investigation_Status', 'Reported_By', 'Insurance_Claim', 'Claim_Amount', 'Fault', 'Injured_Person_Name', 'Contact_Info', 'Vehicle_Damage', 'Repair_Cost', 'Legal_Proceedings', 'Lawyer_Involved', 'Lawyer_Fee']
+
+=== MISSING VALUES (Dataset 1) ===
+Accident_ID         0
+Location            0
+Date                0
+Severity            0
+Weather             0
+Vehicle_Type        0
+Injuries            0
+Fatalities          0
+Cause               0
+Road_Type           0
+Vehicle_Speed       0
+Alcohol_Involved    0
+Road_Condition      0
+Time                0
+dtype: int64
+
+=== MISSING VALUES (Dataset 2) ===
+Accident_ID             0
+Accident_Description    0
+Police_Station          0
+Investigation_Status    0
+Reported_By             0
+Insurance_Claim         0
+Claim_Amount            0
+Fault                   0
+Injured_Person_Name     0
+Contact_Info            0
+Vehicle_Damage          0
+Repair_Cost             0
+Legal_Proceedings       0
+Lawyer_Involved         0
+Lawyer_Fee              0
+dtype: int64
+
+=== DUPLICATE Accident_ID CHECK ===
+df1 Accident_ID unique: 5000 out of 5000
+df2 Accident_ID unique: 5000 out of 5000
+df1 duplicated Accident_ID: 0
+df2 duplicated Accident_ID: 0
+
+=== PII CHECK (Dataset 2) ===
+PII-like columns present: ['Injured_Person_Name', 'Contact_Info']
+  Injured_Person_Name Contact_Info
+0            Person_1    Contact_1
+1            Person_2    Contact_2
+2            Person_3    Contact_3
+3            Person_4    Contact_4
+4            Person_5    Contact_5
+
+=== QUICK DISTRIBUTIONS (Dataset 1) ===
+
+Severity:
+Severity
+Low       1738
+Medium    1640
+High      1622
+Name: count, dtype: int64
+
+Alcohol_Involved:
+Alcohol_Involved
+False    2530
+True     2470
+Name: count, dtype: int64
+
+=== NUMERIC SUMMARY ===
+
+Dataset 1 numeric describe:
+         Injuries   Fatalities  Vehicle_Speed
+count  5000.00000  5000.000000    5000.000000
+mean      4.45660     1.011800      59.295800
+std       2.87732     0.811784      22.980904
+min       0.00000     0.000000      20.000000
+25%       2.00000     0.000000      40.000000
+50%       4.00000     1.000000      59.000000
+75%       7.00000     2.000000      79.000000
+max       9.00000     2.000000      99.000000
+
+Dataset 2 numeric describe:
+       Claim_Amount  Repair_Cost   Lawyer_Fee
+count   5000.000000  5000.000000  5000.000000
+mean    5444.316800  2765.588400  3006.257600
+std     2594.678139  1312.719415  1152.406869
+min     1000.000000   500.000000  1000.000000
+25%     3167.000000  1590.750000  2001.750000
+50%     5451.000000  2773.000000  3040.000000
+75%     7633.500000  3912.000000  3988.000000
+max     9996.000000  4999.000000  4998.000000
+
+✅ Profiling complete.
