@@ -1,0 +1,46 @@
+✅ Loaded raw datasets
+ - df1 shape: (5000, 14)
+ - df2 shape: (5000, 15)
+✅ Merged datasets using JOIN_TYPE='inner' -> shape: (5000, 26)
+
+--- Missing values BEFORE cleaning (merged) (Top 12) ---
+Accident_ID             0
+Location                0
+Lawyer_Involved         0
+Legal_Proceedings       0
+Repair_Cost             0
+Vehicle_Damage          0
+Fault                   0
+Claim_Amount            0
+Insurance_Claim         0
+Reported_By             0
+Investigation_Status    0
+Police_Station          0
+dtype: int64
+✅ Dropped rows with missing/invalid Date: 0 (kept 5000)
+
+--- Missing values AFTER cleaning (post-transform) (Top 12) ---
+Accident_ID          0
+Location             0
+speed_bucket         0
+is_severe            0
+time_bucket          0
+hour                 0
+date_key             0
+Lawyer_Fee           0
+Lawyer_Involved      0
+Legal_Proceedings    0
+Repair_Cost          0
+Vehicle_Damage       0
+dtype: int64
+✅ Exported dim_date: (5000, 6) -> data/processed/dim_date.csv
+✅ Exported dim_time: (24, 3) -> data/processed/dim_time.csv
+✅ Exported dim_location: (5000, 2) -> data/processed/dim_location.csv
+✅ Exported dim_vehicle: (3, 2) -> data/processed/dim_vehicle.csv
+✅ Exported dim_environment: (27, 4) -> data/processed/dim_environment.csv
+✅ Exported dim_cause: (3, 2) -> data/processed/dim_cause.csv
+✅ Exported fact_accident: (5000, 20) -> data/processed/fact_accident.csv
+
+🎉 ETL complete.
+Next: Upload data/processed/*.csv to BigQuery (Step 4).
+Note: JOIN_TYPE='inner' (change in script if needed).
